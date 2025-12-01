@@ -31,7 +31,7 @@ public class ExampleHistorianProvider extends AbstractHistorian<ExampleHistorian
     private final GatewayContext context;
     private final HistorianSettings settings;
 
-    ExampleHistorianProvider(GatewayContext gatewayContext, String name, ExampleHistorianSettings settings) {
+    public ExampleHistorianProvider(GatewayContext gatewayContext, String name, ExampleHistorianSettings settings) {
         super(gatewayContext, name);
         this.context = gatewayContext;
         this.settings = settings;

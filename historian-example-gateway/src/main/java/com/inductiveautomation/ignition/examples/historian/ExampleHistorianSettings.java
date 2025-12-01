@@ -40,6 +40,6 @@ public record ExampleHistorianSettings(
      * @param webdevEndpoint   The webdev endpoint to use
      */
     public ExampleHistorianSettings {
-      webdevEndpoint = StringUtils.defaultIfBlank(webdevEndpoint, DEFAULT.webdevEndpoint());
+      webdevEndpoint = StringUtils.defaultIfBlank(webdevEndpoint, "http://localhost:8088/system/webdev/test/historian");
     }
 }

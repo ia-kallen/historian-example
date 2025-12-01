@@ -1,5 +1,6 @@
 package com.inductiveautomation.ignition.examples.historian;
 
+import com.inductiveautomation.ignition.common.BundleUtil;
 import com.inductiveautomation.ignition.common.licensing.LicenseState;
 import com.inductiveautomation.ignition.common.util.LoggerEx;
 import com.inductiveautomation.ignition.gateway.config.ExtensionPoint;
@@ -27,11 +28,13 @@ public class GatewayHook extends AbstractGatewayModuleHook {
 
     @Override
     public void startup(LicenseState licenseState) {
+        BundleUtil.get().addBundle(ExampleHistorianSettings.class);
         LOGGER.info("Starting up example historian");
     }
 
     @Override
     public void shutdown() {
+        BundleUtil.get().removeBundle(ExampleHistorianSettings.class);
         LOGGER.info("Shutting down example historian");
     }
 

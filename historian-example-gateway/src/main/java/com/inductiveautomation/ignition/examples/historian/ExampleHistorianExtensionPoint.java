@@ -29,15 +29,11 @@ public class ExampleHistorianExtensionPoint extends HistorianExtensionPoint<Exam
             SchemaUtil.fromType(ExampleHistorianSettings.class)
         );
 
-    static {
-        BundleUtil.get().addBundle(ExampleHistorianSettings.class);
-    }
-
-    ExampleHistorianExtensionPoint() {
+    public ExampleHistorianExtensionPoint() {
         super(
             TYPE_ID,
-            "HistorianExample.HistorianExampleType.Name",
-            "HistorianExample.HistorianExampleType.Desc"
+            "ExampleHistorianSettings.HistorianExampleType.Name",
+            "ExampleHistorianSettings.HistorianExampleType.Desc"
         );
     }
 
