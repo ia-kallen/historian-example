@@ -18,33 +18,21 @@ import java.util.Optional;
 
 public class ExampleHistorianExtensionPoint extends HistorianExtensionPoint<ExampleHistorianSettings> {
 
-    private static final String TYPE_ID = "HistorianExample";
-
-    private static final ExtensionPointResourceForm RESOURCE_FORM =
-        new ExtensionPointResourceForm(
-            HistorianExtensionPoint.getResourceType(),
-            "Historian",
-            TYPE_ID,
-            SchemaUtil.fromType(HistorianProvider.class),
-            SchemaUtil.fromType(ExampleHistorianSettings.class)
-        );
-
     public ExampleHistorianExtensionPoint() {
         super(
-            TYPE_ID,
+            "HistorianExample",
             "ExampleHistorianSettings.HistorianExampleType.Name",
-            "ExampleHistorianSettings.HistorianExampleType.Desc"
-        );
-    }
-
-    @Override
-    public Optional<ExampleHistorianSettings> defaultSettings() {
-        return Optional.of(ExampleHistorianSettings.DEFAULT);
+            "ExampleHistorianSettings.HistorianExampleType.Desc");
     }
 
     @Override
     public Optional<WebUiComponent> getWebUiComponent(ComponentType type) {
-        return Optional.of(RESOURCE_FORM);
+        return Optional.of(new ExtensionPointResourceForm(
+            HistorianExtensionPoint.getResourceType(),
+            "Historian",
+            "HistorianExample",
+            SchemaUtil.fromType(HistorianProvider.class),
+            SchemaUtil.fromType(ExampleHistorianSettings.class)));
     }
 
     @NotNull

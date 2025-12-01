@@ -10,8 +10,6 @@ import com.inductiveautomation.ignition.gateway.config.migration.NamedRecordMigr
 import com.inductiveautomation.ignition.gateway.config.migration.SingletonRecordMigrationStrategy;
 import com.inductiveautomation.ignition.gateway.model.AbstractGatewayModuleHook;
 import com.inductiveautomation.ignition.gateway.model.GatewayContext;
-import com.inductiveautomation.ignition.test.historian.TestHistorianExtensionPoint;
-import com.inductiveautomation.ignition.test.historian.TestHistorianSettings;
 import java.util.List;
 
 /**
@@ -31,7 +29,6 @@ public class GatewayHook extends AbstractGatewayModuleHook {
     @Override
     public void startup(LicenseState licenseState) {
         BundleUtil.get().addBundle(ExampleHistorianSettings.class);
-        BundleUtil.get().addBundle(TestHistorianSettings.class);
 
         LOGGER.info("Starting up example historian");
     }
@@ -39,7 +36,6 @@ public class GatewayHook extends AbstractGatewayModuleHook {
     @Override
     public void shutdown() {
         BundleUtil.get().removeBundle(ExampleHistorianSettings.class);
-        BundleUtil.get().removeBundle(TestHistorianSettings.class);
 
         LOGGER.info("Shutting down example historian");
     }
@@ -68,6 +64,6 @@ public class GatewayHook extends AbstractGatewayModuleHook {
      */
     @Override
     public List<ExtensionPoint<?>> getExtensionPoints() {
-        return List.of(new ExampleHistorianExtensionPoint(), new TestHistorianExtensionPoint());
+        return List.of(new ExampleHistorianExtensionPoint());
     }
 }

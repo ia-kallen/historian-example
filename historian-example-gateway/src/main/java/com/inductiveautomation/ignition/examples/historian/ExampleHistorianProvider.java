@@ -21,7 +21,6 @@ import com.inductiveautomation.ignition.common.QualifiedPath;
 import com.inductiveautomation.ignition.common.browsing.BrowseFilter;
 import com.inductiveautomation.ignition.gateway.model.GatewayContext;
 import com.inductiveautomation.ignition.gateway.model.ProfileStatus;
-
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;

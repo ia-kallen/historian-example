@@ -2,7 +2,6 @@ package com.inductiveautomation.ignition.examples.historian;
 
 import com.inductiveautomation.historian.gateway.api.config.HistorianSettings;
 import com.inductiveautomation.ignition.gateway.dataroutes.openapi.annotations.DefaultValue;
-import com.inductiveautomation.ignition.gateway.dataroutes.openapi.annotations.Description;
 import com.inductiveautomation.ignition.gateway.dataroutes.openapi.annotations.DescriptionKey;
 import com.inductiveautomation.ignition.gateway.dataroutes.openapi.annotations.FormCategory;
 import com.inductiveautomation.ignition.gateway.dataroutes.openapi.annotations.FormField;
@@ -22,13 +21,6 @@ public record ExampleHistorianSettings(
         @Required
         @DescriptionKey("ExampleHistorianSettings.WebdevEndpoint.Desc")
         String webdevEndpoint
-
-//        ,@FormCategory("CUSTOM SETTINGS")
-//        @Label("Password")
-//        @FormField(FormFieldType.SECRET)
-//        @DescriptionKey("SecretResource.password.Desc")
-//        @Description(".")
-//        SecretConfig password
 ) implements HistorianSettings {
 
     public static final ExampleHistorianSettings DEFAULT =
